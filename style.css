@@ -317,7 +317,7 @@ h3 {
 .pub-list {
   list-style: none;
   padding-left: 0;
-  counter-reset: pub-counter 12;
+  counter-reset: pub-counter 13;
 }
 
 .pub-list li {
