@@ -389,6 +389,11 @@ h3 {
   color: var(--text-muted);
 }
 
+.pub-badge.conference {
+  background: rgba(44, 110, 192, 0.12);
+  color: #2c6ec0;
+}
+
 .pub-links {
   display: flex;
   gap: 0.5rem;
