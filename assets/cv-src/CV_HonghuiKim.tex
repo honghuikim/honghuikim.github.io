@@ -1,0 +1,92 @@
+% ===== Timeline (Style 4) refined with minimalist-CV insights =====
+%  Keeps the left date-column + vertical hairline of the timeline layout,
+%  but applies: two tones (black/gray), one restrained accent (links only),
+%  title-first publications, left-aligned text (no justify), generous space.
+\documentclass[10.5pt,a4paper]{article}
+\usepackage[margin=0.8in,top=0.5in,bottom=0.45in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fontspec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{microtype}
+
+\setmainfont{DejaVu Sans}[AutoFakeSlant=0.18]
+\definecolor{ink}{HTML}{1A1A1A}
+\definecolor{subtext}{HTML}{6B6B6B}
+\definecolor{accent}{HTML}{35617B}
+\definecolor{rulec}{HTML}{DDDDDD}
+\color{ink}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\sloppy
+
+\newlength{\datecol}\setlength{\datecol}{1.26in}
+\newlength{\gutter}\setlength{\gutter}{0.2in}
+
+% section header: small, near-black, uppercase, thin full-width hairline
+\newcommand{\cvsection}[1]{%
+  \vspace{13pt}\par\noindent
+  {\small\bfseries\color{ink}\MakeUppercase{#1}}\par\vspace{3pt}%
+  {\color{rulec}\hrule height 0.6pt}\vspace{8pt}}
+
+% subsection: small italic gray label within a section
+\newcommand{\cvsubsection}[1]{%
+  \vspace{9pt}\par\noindent{\small\itshape\color{subtext}#1}\par\vspace{5pt}}
+
+\newcommand{\hlink}[2]{\href{#2}{\color{accent}#1}}
+
+% timeline row: left meta (right-aligned, gray, hugs rule) | hairline | content
+% left + right first lines share the same font size so their baselines align.
+% Row spacing lives INSIDE the right minipage (trailing \vspace) and interline
+% glue is suppressed, so the dividing rule runs continuously across all rows.
+\newcommand{\trow}[3][6pt]{%
+  \noindent\begin{minipage}[t]{\datecol}\raggedleft\strut\color{subtext}#2\end{minipage}%
+  \hspace{0.10in}{\color{rulec}\vrule width 0.7pt}\hspace{\dimexpr\gutter-0.10in}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\datecol-\gutter-0.7pt}\raggedright\strut #3\par\vspace{#1}\end{minipage}%
+  \par\nointerlineskip}
+
+\newcommand{\makeheader}{%
+  \begin{center}
+    {\fontsize{25}{27}\selectfont\textbf{Honghui Kim}}\\[4pt]
+    {\color{subtext}Postdoctoral Researcher, KAIST Graduate School of AI}\\[6pt]
+    {\small \hlink{ildmb96@kaist.ac.kr}{mailto:ildmb96@kaist.ac.kr} \quad
+     \hlink{Google Scholar}{https://scholar.google.com/citations?user=FqIni_IAAAAJ} \quad
+     \hlink{GitHub}{https://github.com/honghuikim} \quad
+     \hlink{LinkedIn}{https://www.linkedin.com/in/honghui-kim-52b0a0259} \quad
+     \hlink{honghuikim.github.io}{https://honghuikim.github.io}}
+  \end{center}\vspace{2pt}}
+
+\newcommand{\cvsummary}[1]{{\color{subtext}#1}\par}
+
+% Experience / Education: left = dates + location, right = role, org, detail
+% left first line (dates) matches right first line (bold title) in size -> aligned
+% left first line (dates) matches right first line (bold title) in size -> aligned
+\newcommand{\exprole}[5]{%
+  \trow[10pt]{#3\\[3pt]{\footnotesize #4}}{\textbf{#1}\\[1pt]{\color{subtext}#2}\\[2pt]{\small\color{subtext}#5}}}
+\newcommand{\eduentry}[5]{%
+  \trow[10pt]{#3\\[3pt]{\footnotesize #4}}{\textbf{#1}\\[1pt]{\color{subtext}#2}\\[2pt]{\small\color{subtext}#5}}}
+
+% Publication (selected): left = year (primary) over venue (smaller), right = title / authors / vol / link
+% args: {venue}{year}{authors}{title}{vol}{url}{urltext}
+\newcommand{\pubitem}[7]{%
+  \trow[10pt]{#2\\[1pt]{\footnotesize #1}}{\textbf{#4}\\[3pt]{\small\color{subtext}#3. #5 \hlink{#7}{#6}}}}
+
+% full-list entry: left = year over bold venue; title line, authors below (smaller gray)
+\newcommand{\fullpub}[7]{%
+  \trow[8pt]{\small #2\\[1pt]{\footnotesize\color{subtext}#1}}{\small{\color{ink}#4.}\\[2pt]{\footnotesize\color{subtext}#3. \hlink{#7}{#6}}}}
+
+\newcommand{\pubnote}{\vspace{2pt}{\footnotesize\color{subtext}$^\dagger$equal contribution,\ $^*$corresponding author\par}}
+
+% talks: both sides \small so their first-line baselines align
+\newcommand{\talkitem}[2]{%
+  \trow[7pt]{\small #1}{\small #2}}
+
+\newcommand{\skillline}[2]{%
+  \trow[6pt]{#1}{#2}}
+
+\newcommand{\honoritem}[2]{%
+  \trow[6pt]{#2}{#1}}
+
+\begin{document}
+\input{cvdata.tex}
+\end{document}
