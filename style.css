@@ -394,6 +394,12 @@ h3 {
   color: #2c6ec0;
 }
 
+.pub-badge.workshop {
+  background: transparent;
+  border: 1px solid rgba(44, 110, 192, 0.45);
+  color: #2c6ec0;
+}
+
 .pub-links {
   display: flex;
   gap: 0.5rem;
