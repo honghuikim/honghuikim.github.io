@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400&text=%EA%B9%80%ED%99%8D%ED%9D%AC&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261127k">
+  <link rel="stylesheet" href="style.css?v=20261127l">
 </head>
 <body>
 <div class="page">
@@ -24,11 +24,12 @@
       <h1>Honghui Kim</h1>
       <p class="say">Pronounced Hong-hee (홍희)</p>
       <p class="line">Postdoc, KAIST AI. AI for molecules and materials.</p>
-      <span class="status">Open to US industry research roles · ML / AI4Science</span>
+      <p class="status">I’m on the job market for full-time research scientist roles in ML / AI for Science in the US.</p>
       <p class="links">
         <a href="assets/CV_HonghuiKim.pdf">CV</a>
         <a href="https://scholar.google.com/citations?user=FqIni_IAAAAJ">Google Scholar</a>
         <a href="https://www.linkedin.com/in/honghui-kim-52b0a0259">LinkedIn</a>
+        <a class="email" data-u="ildmb96" data-d="kaist.ac.kr">ildmb96 [at] kaist.ac.kr</a>
       </p>
       </div>
     </div>
@@ -186,5 +187,12 @@
   <footer>© 2026 Honghui Kim · updated Nov 2026</footer>
 
 </div>
+<script>
+  // Assemble the address at load time so it is not stored whole in the HTML.
+  document.querySelectorAll('a.email').forEach(function (a) {
+    a.href = 'mailto:' + a.dataset.u + '@' + a.dataset.d;
+    a.textContent = 'Email';
+  });
+</script>
 </body>
 </html>

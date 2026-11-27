@@ -105,14 +105,11 @@ h1 .kr {
 .line { margin-top: 6px; }
 .line b { color: var(--ink); font-weight: 500; }
 .status {
-  margin-top: 14px;
-  display: inline-flex;
-  align-items: center;
+  margin-top: 12px;
+  display: flex;
+  align-items: baseline;
   gap: 8px;
-  font: 500 12px var(--mono);
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: .04em;
+  color: var(--ink);
 }
 .status::before {
   content: "";
@@ -121,10 +118,8 @@ h1 .kr {
   height: 7px;
   border-radius: 50%;
   background: var(--accent);
-  animation: pulse 2.4s ease-in-out infinite;
+  transform: translateY(-1px);
 }
-@keyframes pulse { 50% { opacity: .35; } }
-@media (prefers-reduced-motion: reduce) { .status::before { animation: none; } }
 .links {
   margin-top: 12px;
   display: flex;
