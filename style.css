@@ -7,8 +7,6 @@
   --mute: #8a8a8a;
   --line: #e8e8e8;
   --link-line: #cfcfcf;
-  --thumb-a: #fafafa;
-  --thumb-b: #f2f2f2;
   --bg: #fff;
   --accent: #d2491e;
   --accent-soft: #fbe6dc;
@@ -25,8 +23,6 @@
     --mute: #7d7d7d;
     --line: #2a2a2a;
     --link-line: #4a4a4a;
-    --thumb-a: #1c1c1c;
-    --thumb-b: #222;
     --bg: #121212;
     --accent: #f06a3c;
     --accent-soft: rgba(240, 106, 60, .2);
@@ -185,9 +181,9 @@ details[open] summary { margin-bottom: 2px; }
 .pubs li {
   position: relative;
   display: grid;
-  grid-template-columns: 112px 1fr 152px;
+  grid-template-columns: 112px 1fr;
   gap: 16px;
-  padding: 10px 0;
+  padding: 14px 0 18px;
   border-bottom: 1px dashed var(--line);
   align-items: start;
 }
@@ -199,9 +195,9 @@ details[open] summary { margin-bottom: 2px; }
 }
 .venue::before { position: absolute; left: 0; top: 5px; }
 .venue span { display: block; font-weight: 400; color: color-mix(in srgb, var(--c) 70%, var(--mute)); }
-.title { font-weight: 500; color: var(--ink); line-height: 1.4; transition: color .15s; }
+.title { font-weight: 500; color: var(--ink); line-height: 1.35; transition: color .15s; }
 .pubs li:hover .title { color: var(--accent); }
-.authors { font-size: 13px; color: var(--mute); margin-top: 2px; }
+.authors { font-size: 13px; line-height: 1.45; color: var(--mute); margin-top: 1px; }
 .authors strong {
   color: var(--ink);
   font-weight: 500;
@@ -209,19 +205,30 @@ details[open] summary { margin-bottom: 2px; }
   border-radius: 2px;
   padding: 0 2px;
 }
-/* Figure / TOC slot: put an <img> inside to replace the placeholder */
-.thumb {
-  display: block;
-  width: 152px;
-  height: 96px;
+/* Figures under title/authors; add more <img> inside .figs for extra panels */
+.figs {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 10px;
+  max-width: 100%;
+}
+.figs img {
+  flex: 0 1 auto;
+  min-width: 0;
+  height: auto;
+  max-height: 150px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: left center;
+  background: #fff;
   border: 1px solid var(--line);
   border-radius: 3px;
-  background: repeating-linear-gradient(45deg, var(--thumb-a) 0 4px, var(--thumb-b) 4px 8px);
-  overflow: hidden;
+  padding: 6px;
+  transition: border-color .15s;
 }
-a.thumb { background: #fff; padding: 4px; transition: border-color .15s, transform .15s; }
-a.thumb:hover { border-color: var(--accent); }
-.thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.figs:hover img { border-color: var(--accent); }
 .title a { color: inherit; text-decoration: none; }
 .title a:hover { color: var(--accent); text-decoration: underline; text-decoration-color: var(--accent); }
 
@@ -242,5 +249,8 @@ footer { margin-top: 40px; font: 12px var(--mono); color: var(--mute); }
   .venue, .pubs li > div { grid-column: 1; }
   .venue span { display: inline; }
   .venue span::before { content: " · "; }
-  
+  .figs img { max-height: 120px; }
+  .dated li, .dated.cv li { grid-template-columns: 1fr; gap: 0; }
+}
+
 .group.conf, .group.jour { color: var(--c); }
