@@ -183,7 +183,7 @@ details[open] summary { margin-bottom: 2px; }
   display: grid;
   grid-template-columns: 112px 1fr;
   gap: 16px;
-  padding: 14px 0 18px;
+  padding: 12px 0 14px;
   border-bottom: 1px dashed var(--line);
   align-items: start;
 }
@@ -213,9 +213,9 @@ details[open] summary { margin-bottom: 2px; }
   align-items: center;
   justify-content: center;
   gap: 16px;
-  margin-top: 10px;
-  height: 180px;
-  padding: 10px;
+  margin-top: 8px;
+  height: 120px;
+  padding: 8px;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 4px;
@@ -251,7 +251,7 @@ footer { margin-top: 40px; font: 12px var(--mono); color: var(--mute); }
   .venue, .pubs li > div { grid-column: 1; }
   .venue span { display: inline; }
   .venue span::before { content: " · "; }
-  .figs { height: 130px; padding: 8px; gap: 10px; }
+  .figs { height: 100px; padding: 6px; gap: 10px; }
   .meta { min-height: 0; }
   .dated li, .dated.cv li { grid-template-columns: 1fr; gap: 0; }
 }
