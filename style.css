@@ -56,8 +56,8 @@ ul { list-style: none; }
 /* Section row: label | content */
 .row {
   display: grid;
-  grid-template-columns: 150px 1fr;
-  gap: 28px;
+  grid-template-columns: 84px 1fr;  /* fits the longest label, "EXPERIENCE" (76px) */
+  gap: 24px;
   padding: 22px 0;
   border-top: 1px solid var(--line);
 }
