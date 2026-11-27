@@ -135,6 +135,7 @@ h1 .kr {
 
 /* About */
 .prose p + p { margin-top: 8px; }
+.prose strong { font-weight: 500; color: var(--ink); }
 
 /* News */
 .dated li { display: grid; grid-template-columns: 78px 1fr; gap: 12px; padding: 2px 0; }
