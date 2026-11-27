@@ -134,6 +134,7 @@ h1 .kr {
 }
 
 /* About */
+.prose p { text-align: justify; }
 .prose p + p { margin-top: 8px; }
 .prose strong { font-weight: 500; color: var(--ink); }
 
@@ -252,6 +253,7 @@ footer { margin-top: 40px; font: 12px var(--mono); color: var(--mute); }
   .venue, .pubs li > div { grid-column: 1; }
   .venue span { display: inline; }
   .venue span::before { content: " · "; }
+  .prose p { text-align: left; }
   .figs { height: 100px; padding: 6px; gap: 10px; }
   .dated li, .dated.cv li { grid-template-columns: 1fr; gap: 0; }
 }
