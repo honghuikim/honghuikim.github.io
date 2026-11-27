@@ -317,7 +317,7 @@ h3 {
 .pub-list {
   list-style: none;
   padding-left: 0;
-  counter-reset: pub-counter 14;
+  counter-reset: pub-counter 15;
 }
 
 .pub-list li {
@@ -391,6 +391,12 @@ h3 {
 
 .pub-badge.conference {
   background: rgba(44, 110, 192, 0.12);
+  color: #2c6ec0;
+}
+
+.pub-badge.workshop {
+  background: transparent;
+  border: 1px solid rgba(44, 110, 192, 0.45);
   color: #2c6ec0;
 }
 
