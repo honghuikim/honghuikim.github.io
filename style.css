@@ -255,6 +255,14 @@ footer { margin-top: 40px; font: 13px var(--mono); color: var(--mute); }
   .venue span::before { content: " · "; }
   .figs { height: 100px; padding: 6px; gap: 10px; }
   .dated li, .dated.cv li { grid-template-columns: 1fr; gap: 0; }
+  /* mobile keeps the original (smaller) type sizes */
+  body { font-size: 14.5px; }
+  .label, .sw, .group { font-size: 11.5px; }
+  h1 { font-size: 30px; }
+  .say { font-size: 12.5px; }
+  .status, .venue, .dated time, details summary, footer { font-size: 12px; }
+  .links, .authors, .dated.cv small { font-size: 13px; }
+  .key { font-size: 12.5px; }
 }
 
 .group.conf, .group.jour { color: var(--c); }
