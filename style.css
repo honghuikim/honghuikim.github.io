@@ -184,6 +184,7 @@ details[open] summary { margin-bottom: 2px; }
   grid-template-columns: 112px 1fr;
   gap: 16px;
   padding: 12px 0 14px;
+  min-height: 240px;  /* tallest row; keeps every row the same height, slack goes below the figure */
   border-bottom: 1px dashed var(--line);
   align-items: start;
 }
@@ -207,7 +208,6 @@ details[open] summary { margin-bottom: 2px; }
 }
 /* Figures under title/authors: fixed-size frame so every paper row is the same size.
    Add more <img> inside .figs for extra panels; they share the frame. */
-.meta { min-height: 86px; } /* tallest title + authors block (3 lines) */
 .figs {
   display: flex;
   align-items: center;
@@ -247,12 +247,11 @@ footer { margin-top: 40px; font: 12px var(--mono); color: var(--mute); }
   .row { grid-template-columns: 1fr; gap: 10px; padding: 18px 0; }
   .profile { grid-template-columns: 1fr; gap: 16px; }
   .photo { grid-column: 1; width: 112px; height: 112px; }
-  .pubs li { grid-template-columns: 1fr; gap: 6px; }
+  .pubs li { grid-template-columns: 1fr; gap: 6px; min-height: 0; }
   .venue, .pubs li > div { grid-column: 1; }
   .venue span { display: inline; }
   .venue span::before { content: " · "; }
   .figs { height: 100px; padding: 6px; gap: 10px; }
-  .meta { min-height: 0; }
   .dated li, .dated.cv li { grid-template-columns: 1fr; gap: 0; }
 }
 
